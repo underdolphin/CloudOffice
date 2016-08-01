@@ -1,0 +1,9 @@
+{
+  "name": "cloudoffice",
+  "dependencies": {},
+  "globalDependencies": {
+    "gulp": "registry:dt/gulp#3.8.0+20160724062653",
+    "gulp-nodemon": "registry:dt/gulp-nodemon#0.0.0+20160316155526",
+    "gulp-typescript": "registry:dt/gulp-typescript#0.0.0+20160317120654"
+  }
+}
