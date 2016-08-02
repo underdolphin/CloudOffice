@@ -4,11 +4,28 @@ const gulp = require('gulp');
 const gulpts = require('gulp-typescript');
 const prettydiff = require('gulp-prettydiff');
 
-const tsProject = gulpts.createProject('tsconfig.json', {
-    typescript: require('typescript')
+const serverProject = gulpts.createProject('tsconfig.json', {
+    typescript: require('typescript'),
+    module : "commonjs"
 });
 
-gulp.task('tsCompile', () => {
+const tsProject = gulpts.createProject('tsconfig.json', {
+    typescript: require('typescript'),
+    module : "es2015"
+});
+
+gulp.task('serverCompile', () => {
+    gulp.src('src/**/*.ts')
+        .pipe(gulpts(serverProject))
+        .js
+        .pipe(prettydiff({
+            lang: 'js',
+            mode: 'minify'
+        }))
+        .pipe(gulp.dest('build/'));
+});
+
+gulp.task('serverCompile', () => {
     gulp.src('src/**/*.ts')
         .pipe(gulpts(tsProject))
         .js
@@ -30,7 +47,7 @@ gulp.task('nodemon', (cb) => {
             let tasks = [];
             changedFiles.forEach(file => {
                 if (path.extname(file) === '.ts' && !~tasks.indexOf("serverCompile"))
-                    tasks.push("tsCompile");
+                    tasks.push("serverCompile");
             });
             return tasks;
         }
