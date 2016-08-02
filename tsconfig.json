@@ -3,7 +3,8 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "target": "es2015",
-        "removeComments": true
+        "removeComments": true,
+        "module": "commonjs"
     },
     "exclude": [
         "build",
