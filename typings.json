@@ -2,6 +2,8 @@
   "name": "cloudoffice",
   "dependencies": {},
   "globalDependencies": {
+    "express": "registry:dt/express#4.0.0+20160708185218",
+    "express-serve-static-core": "registry:dt/express-serve-static-core#4.0.0+20160715232503",
     "felt": "github:underdolphin/MyTypings/felt/felt.d.ts",
     "gulp": "registry:dt/gulp#3.8.0+20160724062653",
     "gulp-nodemon": "registry:dt/gulp-nodemon#0.0.0+20160316155526",
@@ -9,6 +11,7 @@
     "minimatch": "registry:dt/minimatch#2.0.8+20160317120654",
     "node": "registry:dt/node#6.0.0+20160801161248",
     "orchestrator": "registry:dt/orchestrator#0.0.0+20160316155526",
-    "q": "registry:dt/q#0.0.0+20160613154756"
+    "q": "registry:dt/q#0.0.0+20160613154756",
+    "serve-static": "registry:dt/serve-static#0.0.0+20160606155157"
   }
 }
