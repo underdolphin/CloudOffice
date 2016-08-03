@@ -40,21 +40,17 @@ gulp.task('tsCompile', () => {
         .pipe(gulp.dest('build/client'));
 });
 
-gulp.task('nodemon', (cb) => {
-    nodemon({
-        script: 'build/server/',
-        watch: 'build/',
-        ignore: ['build/client/**/*']
-    }).on('start', cb);
-});
-
 gulp.task('watch', ['tsCompile', 'serverCompile','start'], () => {
     gulp.watch('src/server/**/*.ts', ['serverCompile']);
     gulp.watch('src/client/**/*.ts', ['tsCompile']);
 });
 
 gulp.task('start', () => {
-    gulp.start('nodemon');
+    nodemon({
+        script: 'build/server/index.js',
+        watch: 'build/',
+        ignore: ['build/client/**/*']
+    }).on('start', () => {});
 });
 
 gulp.task('default', () => {
