@@ -16,6 +16,8 @@
   "dependencies": {
     "express": "^4.14.0",
     "felt": "^0.2.2",
+    "felt-postcss": "^0.1.0",
+    "felt-rollup": "^0.1.0",
     "pug": "^2.0.0-beta4"
   }
 }
